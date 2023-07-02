@@ -17,7 +17,7 @@ const cardsWrapper = document.querySelector('.term-cards-wrapper');
         let termsPerPage = 9
         let paginationResult
         if(document.body.offsetWidth < 480) {
-            termsPerPage = 3
+            termsPerPage = 4
         }else if (document.body.offsetWidth < 991) {
             termsPerPage = 6
     
@@ -35,13 +35,15 @@ const cardsWrapper = document.querySelector('.term-cards-wrapper');
             scrollbar: {
               el: '.swiper-scrollbar',
             },
-            slidesPerView: 8,
-            slidesPerGroup: 3,
-            spaceBetween: 13,
-            freeMode: true
+            slidesPerView: 10,
+            slidesPerGroup: 7,
+            freeMode: true,
           });
-        // initiate first page on window load
-        window.onload = () => {
+          
+          
+          // initiate first page on window load
+          window.onload = () => {
+            swiper.update();
             // document.querySelector('.page-number').click()
         }
         // initiate first page on window load
@@ -117,6 +119,11 @@ const cardsWrapper = document.querySelector('.term-cards-wrapper');
         // generate alphabet for desktop
         // initiate slider
         swiperInit(alphabetArrGeo)
+
+        swiperWrapper.childNodes.forEach(letter => {
+            //add class for Transform ToLowerCase
+            letter.classList.add('alphabet-toLowerCase')
+        });
         // initiate slider
         // adding active class to first letter
         alphabetWrapper.childNodes[1].classList.add('active-letter')
@@ -138,27 +145,39 @@ const cardsWrapper = document.querySelector('.term-cards-wrapper');
                 switchFace.innerText = switchTextGeo
                 alphabetWrapper.innerText = ''
                 alphabetGenerator(alphabetArrEng)
+                
                 console.log(document.body.offsetWidth)
                 if(document.body.offsetWidth < 570) {
                     alphabetSwitcher.style.transform = 'translateX(25px)'
                 }else {
                     alphabetSwitcher.style.transform = 'translateX(34px)'
                 }
+                //add class for Transform ToUpperCase
                 lettersOnClick('.letter-box')
                 swiperInit(alphabetArrEng)
                 alphabetWrapper.childNodes[0].classList.add('active-letter')
                 swiperWrapper.childNodes[0].classList.add('active-letter')
+                swiperWrapper.childNodes.forEach(letter => {
+                    letter.classList.add('alphabet-toUpperCase')
+                });
             }
             else {
                 switchFace.innerText = switchTextEng
                 alphabetWrapper.innerText = ''
                 alphabetGenerator(alphabetArrGeo)
+                
                 alphabetSwitcher.style.transform = 'translateX(0px)'
                 lettersOnClick('.letter-box')
                 swiperInit(alphabetArrGeo)
                 alphabetWrapper.childNodes[0].classList.add('active-letter')
                 swiperWrapper.childNodes[0].classList.add('active-letter')
+                swiperWrapper.childNodes.forEach(letter => {
+                    //add class for Transform ToLowerCase
+                    letter.classList.add('alphabet-toLowerCase')
+                });
             }
+            swiper.update();
+            swiper.slideTo(0,0)
     
         })
         searchFilter.addEventListener('change', () => {
@@ -206,7 +225,7 @@ const cardsWrapper = document.querySelector('.term-cards-wrapper');
                 resultCounter.innerText = arr.length
             }
         }
-        function alphabetGenerator(alphabetArray) {
+        async function alphabetGenerator(alphabetArray) {
             if (alphabetArray[0] == alphabetArrGeo[0]) {
                 alphabetArray.forEach((letter) => {
                     const letterSpan = document.createElement('span')

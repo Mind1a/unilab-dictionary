@@ -594,7 +594,7 @@ body{
 }
 .alphabet-wrapper .lchange {
     cursor: pointer;
-    margin-left: 60px;
+    /* margin-left: 60px; */
     background-color: var(--card-bg);
     color: var(--white);
     font-size: var(--medium);
@@ -617,6 +617,14 @@ body{
     font-weight: 600;
     cursor: pointer;
     appearance: none;
+}
+.container .search-block .searchbar form select option {
+    margin: 0 15px;
+    background: rgba(240, 10, 15, .2);
+}
+.container .search-block .searchbar form select option:hover {
+    background: rgba(0, 50, 245, .2);
+    cursor: pointer;
 }
 
 .select-wrapper {
@@ -651,8 +659,8 @@ body{
 
 #filter, #sort {
     /* width: 100%; */
-    padding-right: 1.2rem;
-    border-radius: 5px;
+    /* padding-right: 1.2rem; */
+    border-radius: 8px;
     background-color: #F5F8FD;
     border: none;
     color: #343645;
@@ -816,12 +824,15 @@ option {
     justify-content: space-between;
     align-items: center;
 }
-.letter-box.geo:not(:last-child) {
+.letter-box{
+    font-family: 'FiraGo-Regular', sans-serif;
+}
+/* .letter-box.geo:not(:last-child) {
     margin-right: 5px;
 }
 .letter-box:not(:last-child) {
     margin-right: 10px;
-}
+} */
 .term-card.fullsize {
     width: 100%;
 }
@@ -851,9 +862,18 @@ option {
 .swiper-slide {
     cursor: pointer;
     text-align: center;
-    width: calc((100%)/10) !important;
-    /* background-color: red; */
+    font-family: 'firaGo-regular', sans-serif;
+    width: calc((100%)/10);
 }
+.alphabet-toUpperCase{
+    text-transform: uppercase;
+}
+.alphabet-toLowerCase{
+    text-transform: lowercase;
+}
+.swiper-free-mode>.swiper-wrapper {
+     margin: 0 !important;
+} 
 .swiper-horizontal .swiper-scrollbar {
     bottom: 1px;
 }

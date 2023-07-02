@@ -364,13 +364,12 @@
 
     .swiper-wrapper {
         width: 80%;
-        padding-right: 40px;
+        /* padding-right: 40px; */
     }
 
-    .swiper-slide {
+    /* .swiper-slide {
         font-family: 'firaGo-regular', sans-serif;
-        text-transform: lowercase;
-    }
+    } */
 
     .example-img {
         width: 275px;
