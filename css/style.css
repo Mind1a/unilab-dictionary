@@ -429,22 +429,40 @@ body{
 }
 
 .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 100%;
     text-align: center;
-    padding: 32px 0 2px 0;
+    margin: 32px 0 2px 0;
+    font-family: 'firaGo-regular';
 }
 .pagination span {
     cursor: pointer;
+    height: 100%;
 }
 .pagination-double-left-arrow, .pagination-double-right-arrow{
+    display: inline-block;
     height: 20px;
     width: 20px;
+    transform: rotate(-90deg);
+    margin: 0 10px;
+}
+.double-arrows-wrapper {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0px;
+}
+.double-arrows-wrapper svg {
+    height: 100%;
 }
 .pagination-right-arrow, .pagination-left-arrow {
     display: inline-block;
     height: 20px;
     width: 20px;
 }
+
 .pagination-left-arrow{
     transform: rotate(-90deg);
     margin-right: 10px;
@@ -614,13 +632,13 @@ body{
     padding-left: 10px;
     outline: none;
     font-family: 'firaGo-regular';
-    font-weight: 600;
+    font-weight: normal;
     cursor: pointer;
     appearance: none;
 }
 .container .search-block .searchbar form select option {
     margin: 0 15px;
-    background: rgba(240, 10, 15, .2);
+    font-weight: normal;
 }
 .container .search-block .searchbar form select option:hover {
     background: rgba(0, 50, 245, .2);
@@ -660,10 +678,11 @@ body{
 #filter, #sort {
     /* width: 100%; */
     /* padding-right: 1.2rem; */
-    border-radius: 8px;
+    border-radius: 5px;
     background-color: #F5F8FD;
     border: none;
     color: #343645;
+
 }
 
 #filter {
@@ -671,13 +690,12 @@ body{
     margin-right: 1.25rem;
 }
 #sort {
-    width: 144px;
+    width: 285px;
 }
 
 option {
     color: var(--main-font);
     font-family: 'firaGo-regular';
-    font-weight: bold;
 }
 
 .container .search-block input[type=text] {
