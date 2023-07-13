@@ -14,10 +14,6 @@
         max-width: 868px;
     }
 
-    .term-cards-wrapper {
-        justify-content: space-around;
-    }
-
     .letter-box.geo:not(:last-child) {
         margin-right: 2px;
     }
@@ -66,15 +62,15 @@
         left: 0;
     }
 
-    #filter {
-        /* top: 85px;
-        left: 180px; */
+    /* #filter {
+        top: 85px;
+        left: 180px;
     }
 
     #sort {
-        /* top: 85px;
-        left: 400px; */
-    }
+        top: 85px;
+        left: 400px;
+    } */
 
     .term-detailed .example-flexbox p {
         max-width: 490px;
@@ -364,13 +360,12 @@
 
     .swiper-wrapper {
         width: 80%;
-        padding-right: 40px;
+        /* padding-right: 40px; */
     }
 
-    .swiper-slide {
+    /* .swiper-slide {
         font-family: 'firaGo-regular', sans-serif;
-        text-transform: lowercase;
-    }
+    } */
 
     .example-img {
         width: 275px;
