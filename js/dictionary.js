@@ -310,7 +310,7 @@ export function renderData(array) {
                           <span class="term-icon">
                               <img src="${element.iconPath}" ../alt="third icon">
                           </span>
-                          <h3 class="term-header-title"><span>${element.titleEng} -</span><span>${element.titleGeo}</span></h3>
+                          <h3 class="term-header-title"><span>${element.titleEng} -&nbsp;</span><span>${element.titleGeo}</span></h3>
                       </div>
                       <div class="card-body">
                           <p class="term-description">${element.Description.split(' ').splice(0, wordsCount).join(' ') + "..."}</p>

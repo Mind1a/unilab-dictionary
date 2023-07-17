@@ -158,7 +158,7 @@ body{
 }
 .term-card{
     color: var(--card-bg);
-    width: 346px;
+    width: 100%;
     background-color: var(--white);
     margin: 20px 0;
     padding: 14px 20px;
@@ -183,7 +183,7 @@ body{
 }
 .term-header-title{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 .term-icon{
     display: block;
@@ -202,7 +202,6 @@ body{
     width: 297px;
     height: 47px;
     font-family: 'firaGo-medium';
-    margin-bottom: 10px;
 }
 .term-description{
     font: normal normal 400 14px/17px firaGo-regular;
@@ -851,7 +850,7 @@ option {
 .letter-box:not(:last-child) {
     margin-right: 10px;
 } */
-.term-card.fullsize {
+/* .term-card.fullsize {
     width: 100%;
 }
 .term-card.fullsize .term-header-title {
@@ -859,7 +858,7 @@ option {
 }
 .term-card.fullsize .card-body {
     width: 80%;
-}
+} */
 /* swiper */
 .swiper-container {
     position: relative;
